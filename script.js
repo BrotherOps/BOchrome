@@ -95,8 +95,7 @@ if(currentState === 'ON') {
                 document.getElementById("marshalReport").value = newReportVal
               }
             }
-            if(event.target.classList.contains("penalty-user")) { 
-              console.log(`penalty click`)
+            if(event.target.classList.contains("kick-user")) { 
               const reactid = event.target.getAttribute("data-reactid")
               const search = reactid.match(/\$[^$]*\$(\d+)\./);
               const driverId = search ? search[1] : null;
