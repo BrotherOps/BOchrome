@@ -1,0 +1,124 @@
+#BOchromeMenuBtn {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  top: 20px;
+  left: 20px;
+  background: url('https://raw.githubusercontent.com/BrotherOps/BOchrome/refs/heads/main/img/bo-logo.jpg');
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#BOchromeOverlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: none;
+  background: #00000070;
+}
+#BOchromeOverInner {
+  position: fixed;
+  height: 250px;
+  width: 350px;
+  top: 50%;
+  left: 50%;
+  margin-top: -125px;
+  margin-left: -175px;
+  background: #000;
+}
+#BOchromeOverStay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: none;
+  background: #00000070;
+}
+#BOchromeOverStayInner {
+  position: fixed;
+  height: 300px;
+  width: 500px;
+  top: 50%;
+  left: 50%;
+  padding: 40px;
+  margin-top: -170px;
+  margin-left: -270px;
+  background: #000;
+}
+#BOchromeOverStayInner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+#BOchromeOverStayInner label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+#BOchromeOverStayInner label:hover {
+  text-decoration: underline;
+}
+#BOchromeOverStayInner textarea {
+  width: calc(500px - 80px);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#BOchromeOverStayInner .sendReport {
+  cursor: pointer;
+  color: #1bc046;
+  border: 1px solid #1bc046;
+  border-left: 5px solid #1bc046;
+  background: rgba(27, 192, 70, 0.26);
+  float: right;
+  padding: 10px;
+  font-weight: bold;
+  position: relative;
+  font-size: 20px;
+  text-align: center;
+  width: 50%;
+}
+
+#BOchromeBlock {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: none;
+  background: #00000090;
+}
+#BOchromeBlockInner {
+  position: fixed;
+  height: 250px;
+  width: 370px;
+  top: 50%;
+  left: 50%;
+  padding: 20px 40px;
+  margin-top: -145px;
+  margin-left: -215px;
+  background: #000;
+}
+#BOchromeBlockInner h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: #F00;
+}
+#BOchromeBlockInner span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  display: inline-block;
+  text-align: justify;
+}
+#BOchromeBlockInner a {
+  color: #F00;
+}
+#BOchromeBlockInner a:hover {
+  text-decoration: none;
+}
