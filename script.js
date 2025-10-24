@@ -1,7 +1,7 @@
 var token = `-`
 var persToken = `-`
 var botURL = "http://prem-eu1.bot-hosting.net:22412"
-var version = `0.1.3`
+var version = `0.1.4`
 
 // tokens system
 chrome.storage.local.get('communityToken', function(result){
@@ -87,7 +87,7 @@ if(currentState === 'ON') {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({token: token, perstoken: persToken})
+    body: JSON.stringify({clientversion: version, token: token, perstoken: persToken})
   })
     .then((response) => {
       if(response.status === 402) {
@@ -130,6 +130,11 @@ if(currentState === 'ON') {
           })
         })
         return 401
+      } else if(response.status === 409) {
+        console.log('Unauthorized')
+        BOchromeBlock.style.display = 'block'
+        BOchromeBlock.innerHTML = `<div id="BOchromeBlockInner"><h1>Client update required</h1><span>Great news again! There is a new version <a href="https://github.com/BrotherOps/BOchrome/releases/latest" target="_new">for you to download</a>.<br/><br/>Follow <a href="https://github.com/BrotherOps/BOchrome?tab=readme-ov-file#update-chrome-extension" target="_new">the instructions</a> on how to update.</span></div>`
+        return 409
       } else {
         return response.json()
       }
@@ -295,7 +300,9 @@ if(currentState === 'ON') {
               const kickban = event.target.getAttribute("data-kickban")
               var kbText = (kickban === 'BAN') ? 'banned' : 'kicked'
               let marshalReportVal = document.getElementById("marshalReport").value
-              marshalReportVal = marshalReportVal.replace(/\,$/, '')
+              if (marshalReportVal.endsWith(",")) {
+                marshalReportVal = marshalReportVal.slice(0, -1)
+              }
               sendChat(processid, `${drivername} got ${kbText} for ${marshalReportVal} 🏴`)
               
               fetch(`${botURL}/api/r3e/kick`, {
