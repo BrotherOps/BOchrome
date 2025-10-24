@@ -1,1 +1,1 @@
-# BrotherOps Chrome
+# BrotherOps Marshal Chrome Extension - All rights reserved.
